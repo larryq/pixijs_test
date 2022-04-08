@@ -23,14 +23,14 @@ const style = new PIXI.TextStyle({
 });
 
 const Message = ({ poem: msg, interval = 0, children }) => {
-  const poemChars = () => msg.split("").concat([...Array(10)].map(() => ''));
-  const [state, setState] = useState({ text: '', rest: poemChars() })
+  const messageChars = () => msg.split("").concat([...Array(10)].map(() => ''));
+  const [state, setState] = useState({ text: '', rest: messageChars() })
   
   useEffect(() => {
     const update = () => {
       setState(({ text, rest }) => { 
         if (rest.length === 0) {
-          return { text: '', rest: poemChars() }
+          return { text: '', rest: messageChars() }
         }
         const line = text + rest.shift();
         return { text: line, rest }
