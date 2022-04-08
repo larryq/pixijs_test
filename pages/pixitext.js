@@ -35,7 +35,7 @@ const Message = ({ poem: msg, interval = 0, children }) => {
         const line = text + rest.shift();
         return { text: line, rest }
       })
-    }
+    } 
     
     const i = setInterval(update, interval);
     return () => {
